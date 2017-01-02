@@ -2,7 +2,7 @@ import requests
 import csv
 from bs4 import BeautifulSoup
 i = 0
-url = 'http://www.imdmumbai.gov.in/scripts/detail.asp?releaseid=E2016RW'
+url = 'http://www.imdmumbai.gov.in/scripts/detail.asp?releaseid=E2012RW'
 
 def getdata(url):
     try:
@@ -33,7 +33,7 @@ def getdata(url):
         else :
             print 'Something went wrong'
     
-        f = open('E:\Projects\Flood-Prediction\data\warn_data2016.csv', 'ab')
+        f = open('E:\Projects\Flood-Prediction\data\warn_data2012_1.csv', 'ab')
         writer = csv.writer(f, delimiter=',')
         writer.writerow([date,time,desc])
         f.close()
@@ -41,7 +41,7 @@ def getdata(url):
         print e, url
 
 
-while i < 354:
+while i < 106:
     i = i + 1
     getdata(url + str(i))
     print i
